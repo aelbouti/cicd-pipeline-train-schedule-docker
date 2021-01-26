@@ -1,6 +1,6 @@
 FROM node:carbon
 workdir /usr/src/app
-copy package*.json .
+copy package*.json ./
 RUN nmp install
 copy . .
 EXPOSE 8080
