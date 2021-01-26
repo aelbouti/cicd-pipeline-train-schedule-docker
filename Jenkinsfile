@@ -23,7 +23,7 @@ pipeline {
 				branch 'master'
 			}
 			steps {
-                script {²
+                script {
 				docker.withregistry( 'https://hub.docker.com/', 'abderelb'){
                     app.push("train-schedule")
 					app.push("${env.BUILD_NUMBER}")
