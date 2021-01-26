@@ -23,7 +23,7 @@ pipeline {
 				branch 'master'
 			}
 			steps {
-                script {
+                script {²
 				docker.withregistry( 'https://hub.docker.com/', 'abderelb'){
                     app.push("train-schedule")
 					app.push("${env.BUILD_NUMBER}")
@@ -31,18 +31,6 @@ pipeline {
             }
         }
     }
-		stage('deploy new image in production') {
-            when {
-				branch 'master'
-			}
-			steps {
-                script {
-                    app = docker.build("abderelb/train-schedule")
-                    app.inside {
-                        sh 'echo $(curl localhost:8080)'
-                        }
-            }
-        }
-    }
+		
 }
 }
