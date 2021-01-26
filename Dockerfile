@@ -1,7 +1,7 @@
 FROM node:carbon
 workdir /usr/src/app
 copy package*.json ./
-RUN nmp install
+RUN npm install
 copy . .
 EXPOSE 8080
-CMD nmp start
+CMD npm start
